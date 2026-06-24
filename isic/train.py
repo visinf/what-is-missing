@@ -3,7 +3,7 @@ import copy
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torchvision import datasets, transforms, models
+from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 import torchvision.models as models
@@ -45,7 +45,6 @@ data_transforms = {
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
         transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
-        transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(mean=imagenet_mean, std=imagenet_std)
     ]),
@@ -214,7 +213,6 @@ for seed in range(RUNS): # different training runs
         model = model.to(DEVICE)
 
         # ----- Loss + Optimizer -----
-        criterion = nn.CrossEntropyLoss()
         pos_weight = torch.ones([2]).to(DEVICE)  # All weights are equal to 1
         criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
         optimizer = optim.Adam(model.parameters(), lr=0.0001, weight_decay=1e-4)

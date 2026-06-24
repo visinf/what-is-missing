@@ -1,16 +1,17 @@
-# Benchmarking the Attribution Quality of Vision Models
+# What is Missing? Explaining Neurons Activated by Absent Concepts
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Framework](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?&logo=PyTorch&logoColor=white)](https://pytorch.org/)
 
 [R. Hesse](https://robinhesse.github.io/), [S. Schaub-Meyer](https://schaubsi.github.io/), [J. Hesse](https://lir-mainz.de/mitarbeiter/janina-hesse), [B. Schiele](https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/people/bernt-schiele), and [S. Roth](https://www.visinf.tu-darmstadt.de/visual_inference/people_vi/stefan_roth.en.jsp). **What is Missing? Explaining Neurons Activated by Absent Concepts**. _ICML_, 2026.
 
-[ArXiv](https://arxiv.org/abs/2407.11910) | [Poster](https://github.com/visinf/what-is-missing/blob/main/poster.pdf)
+[ArXiv](https://arxiv.org/abs/2603.09787) | [Poster](https://github.com/visinf/what-is-missing/blob/master/poster.pdf)
 
 
 ## Environment
 
 `conda env create -f environment.yml`
+
 `conda activate what-is-missing`
 
 ## Reichardt detector experiment
@@ -32,9 +33,8 @@ The results will be stored in `/visualization`.
 ## ImageNet experiment
 
 ```cd imagenet```
-
 run, e.g.,
-````
+```
 python image_quantitative.py --data_dir /fastdata/rhesse/datasets/imagenet --model resnet50 --model_layer model.layer4[2].conv3 --batch_size 256 --patch_size 48 --patch_stride 16 --nr_patches 8 --seed 0
 ```
 

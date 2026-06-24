@@ -42,9 +42,7 @@ python image_quantitative.py --data_dir /fastdata/rhesse/datasets/imagenet --mod
 
 ### Download the dataset 
 
-```cd isic```
-
-Set the DOWNLOAD_DIR and API_TOKEN in isic_download.py
+```cd isic``` and set the DOWNLOAD_DIR and API_TOKEN in isic_download.py
 
 run `python isic_download.py`
 
@@ -55,7 +53,10 @@ Disclaimer: the ISIC API changed over the course of the project, and I did not m
 run `python train.py`
 
 You can set:
+
 The debiasing mode - `MODE = ['default', 'presence_debias', 'presence_absence_debias']`
+
 The model - `MODEL = ['xresnet50', 'vit_b_16']`
+
 and other parameters (remember to adjust the `STORE_DIR` for the different models)
 
